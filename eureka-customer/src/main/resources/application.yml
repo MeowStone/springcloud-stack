@@ -1,0 +1,28 @@
+server:
+  port: 8082
+
+eureka.server.ip: 192.168.1.102
+eureka.server.port: 8080
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://${eureka.server.ip}:${eureka.server.port}/eureka
+  instance:
+    preferIpAddress: true
+
+
+
+spring:
+  application:
+    name: eureka-customer
+
+feign:
+  httpclient:
+    enabled: false
+    connection-timeout: 9000
+  okhttp:
+    enabled: true
+  hystrix:
+    enabled: true
+
