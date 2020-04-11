@@ -1,0 +1,15 @@
+server:
+  port: 8081
+
+
+eureka.center.port: 8080
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://localhost:${eureka.center.port}/eureka
+spring:
+  application:
+    name: eureka-provider
